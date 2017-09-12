@@ -1,0 +1,97 @@
+html, body, div, span, applet, object, iframe, table, caption, tbody, tfoot, thead, tr, th, td,
+del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend {
+	vertical-align: baseline;
+	outline: 0 none;
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+a:hover, a:focus {
+	text-decoration: none;
+	outline: none;
+}
+.nav>li>a:hover,
+.nav>li>a:focus {
+  text-decoration: none;
+  background-color: transparent;
+}
+
+@font-face {
+  font-family: "Raleway-ExtraBold";
+  src: url(fonts/Raleway/Raleway-ExtraBold.ttf);
+}
+@font-face {
+  font-family: "Raleway-Regular";
+  src: url(fonts/Raleway/Raleway-Regular.ttf);
+}
+@font-face {
+  font-family: "Raleway-ExtraLight";
+  src: url(fonts/Raleway/Raleway-ExtraLight.ttf);
+}
+@font-face {
+  font-family: "Raleway-Light";
+  src: url(fonts/Raleway/Raleway-Light.ttf);
+}
+@font-face {
+  font-family: "OpenSans-Regular";
+  src: url(fonts/Open_Sans/OpenSans-Regular.ttf);
+}
+
+html, body {
+	width: 100vw;
+	height: 100%;
+  overflow-x: hidden;
+	background: #fff;
+	font-family: "OpenSans-Regular";
+	font-size: 1vw;
+	color: #56534c;
+  line-height: 1.7;
+}
+ul>li {
+	list-style: none;
+}
+h1 {
+  font-size: 6vw;
+  font-family: "Raleway-ExtraBold";
+  color: rgb(255, 255, 255);
+	text-transform: uppercase;
+}
+h1>span {
+	color: #ee8337;
+	font-family: "Raleway-Light";
+}
+h2 {
+	font-size: 3vw;
+  font-family: "Raleway-Light";
+	font-weight: bold;
+	margin-bottom: 5px;
+	text-transform: uppercase;
+}
+h3 {
+	font-size: 1.3vw;
+  font-family: "OpenSans-Regular";
+	font-weight: bold;
+}
+section {
+	padding: 8vw 0;
+	background-repeat: no-repeat;
+	background-position: 100% 0%;
+	background-size: cover;
+	position: relative;
+}
+.fa-rss {
+  font-size: 48px;
+  font-family: "FontAwesome";
+  color: rgb(204, 204, 204);
+  line-height: 1.2;
+  text-align: left;
+  position: absolute;
+  left: 592px;
+  top: 734.2px;
+  z-index: 193;
+}
