@@ -50,6 +50,10 @@ a:hover, a:focus {
   font-family: "OpenSans-Bold";
   src: url(fonts/Open_Sans/OpenSans-Bold.ttf);
 }
+@font-face {
+  font-family: "OpenSans-Italic";
+  src: url(fonts/Open_Sans/OpenSans-Italic.ttf);
+}
 
 html, body {
 	width: 100vw;
@@ -57,7 +61,7 @@ html, body {
   overflow-x: hidden;
 	background: #f5f5f5;
 	font-family: "OpenSans-Regular";
-	font-size: 1.1vw;
+	font-size: 1.2vw;
 	color: #86878b;
   line-height: 1.7;
 }
@@ -89,7 +93,7 @@ h3 {
 	font-weight: bold;
 }
 section {
-	padding: 6vw 0;
+	padding: 7vw 0;
 	position: relative;
 }
 .flex-parent {
@@ -109,11 +113,27 @@ section {
 .padd {
  padding: 0 2vw;
 }
+.round {
+	border: 2px solid #ff8b38;
+	border-radius: 50%;
+}
 .line {
 	width: 6vw;
 	height: 2px;
 	background: #ee8337;
 	margin: 2.5vw 0;
+}
+#about .line,
+#pricing .line,
+#reviews .line,
+#free .line,
+#contact .line {
+	margin: 0 auto;
+	margin-top: 2.5vw;
+	margin-bottom: 2.5vw;
+}
+.caption {
+	margin-bottom: 6vw;
 }
 .download {
 	font-family: "OpenSans-Bold";
@@ -126,7 +146,7 @@ section {
 }
 .orange {
 	background: #ee8337;
-	border-radius: 5px;
+	border-radius: 8px;
 }
 
 .main-nav {
@@ -164,7 +184,11 @@ section {
 .banner h2 {
 	color: #fff;
 }
-.banner .download {
+.slogan p {
+	color: rgba(255, 255, 255, 0.8);
+}
+.banner .download,
+#free .download {
 	border: 2px solid #fff;
 }
 .banner .line {
@@ -173,7 +197,7 @@ section {
 .form-content {
 	width: 60%;
 	background: #f5f5f5;
-	border-radius: 5px;
+	border-radius: 8px;
 	position: relative;
 }
 .form-content h3 {
@@ -185,7 +209,7 @@ section {
 }
 .form-content form {
 	background: #fff;
-	border-radius: 0 0 5px 5px;
+	border-radius: 0 0 8px 8px;
 }
 .form-group {
 	margin-bottom: 0;
@@ -198,7 +222,7 @@ section {
   display: block;
   width: 80%;
 	margin: 0 auto;
-  padding: 1vw;
+  padding: 1.5vw 1vw;
   font-size: 1.1vw;
 	background-color: transparent;
 	border: none;
@@ -207,12 +231,18 @@ section {
   box-shadow: none;
 	border-bottom: 1px solid #ccc;
 }
+.form-control:focus {
+  border-color: #ff9b51;
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
 .btn-default {
   color: #fff;
 	font-family: "OpenSans-SemiBold";
   background-color: #ff9b51;
   border: none;
-  border-radius: 0 0 5px 5px;
+  border-radius: 0 0 8px 8px;
   width: 100%;
   line-height: 3;
 	font-size: 1.3vw;
@@ -257,7 +287,7 @@ section {
 	padding: 0;
 }
 #features article {
-	padding: 6vw 0;
+	padding: 7vw 0;
 }
 #features article:nth-child(2n) {
 	background-color: #fff;
@@ -272,7 +302,7 @@ section {
 	height: 100%;
 	width: 70%;
 	text-align: center;
-	border-radius: 5px;
+	border-radius: 8px;
 	overflow: hidden;
 	display: -webkit-flex;
 	display: -ms-flex;
@@ -315,12 +345,10 @@ section {
 .arrows li {
 	overflow: hidden;
 }
-.round {
+#features .round {
 	width: 3vw;
 	height: 3vw;
 	margin: 0.3vw 3vw 0 0;
-	border: 3px solid #ff8b38;
-	border-radius: 50%;
 	float: left;
 	background: no-repeat center;
 	background-size: 60%;
@@ -328,4 +356,234 @@ section {
 .info {
 	float: right;
 	width: calc(100% - 6vw);
+}
+#about {
+	background: #fff;
+}
+#about .round {
+	width: 5vw;
+	height: 5vw;
+	margin: 0 auto;
+	margin-bottom: 2vw;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+	justify-content: center;
+}
+#about h3 {
+	margin-bottom: 2vw;
+}
+#pricing .content {
+	justify-content: flex-end;
+}
+.options {
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+.options .header,
+.options .main {
+	background: #333;
+	color: #fff;
+}
+.options .header {
+	margin-bottom: 1px;
+}
+.options .header h3 {
+	color: #fff;
+	line-height: 3.5;
+}
+.main p:last-child {
+	color: #737373;
+}
+.options .footer {
+	background: #ff8b38;
+	min-height: 10px;
+}
+.options .footer p {
+	line-height: 3;
+	font-size: 1.2vw;
+	color: #fff;
+	font-family: "OpenSans-SemiBold";
+	text-transform: uppercase;
+}
+.options .main p:last-child {
+	font-family: "OpenSans-Italic";
+	line-height: 4;
+	font-weight: bold;
+}
+.options .main p:first-child {
+	font-size: 7vw;
+	font-family: "Raleway-ExtraBold";
+	line-height: 1.3;
+}
+.options .main p:first-child span {
+	font-size: 3.3vw;
+}
+.options .description {
+	background: #fff;
+}
+.options .description li {
+	border-bottom: 2px solid #f5f5f5;
+	text-transform: uppercase;
+	line-height: 2.5;
+}
+#reviews {
+	background: #fff;
+}
+.photo-round {
+	width: 5vw;
+	height: 5vw;
+	background: no-repeat center;
+	background-size: cover;
+	margin: 2vw;
+}
+#reviews .description {
+	justify-content: flex-start;
+	align-items: center;
+	margin-top: 2vw;
+}
+.saying {
+	background: #f5f5f5;
+	border-radius: 8px;
+	padding: 1.5vw 1vw;
+	text-align: left;
+	position: relative;
+	font-family: "OpenSans-Italic";
+}
+.saying::after {
+	content: "";
+  position: absolute;
+  bottom: -1.5vw;
+  left: 10%;
+  width: 0;
+  height: 0;
+  border-left: 1vw solid transparent;
+  border-right: 1vw solid transparent;
+  border-top: 2vw solid #f5f5f5;
+}
+#free {
+	background: url(../img/fool-design.png) no-repeat center;
+	background-size: cover;
+	padding: 5vw 0;
+}
+#free .caption {
+  margin-bottom: 0;
+}
+#free h2 {
+	color: #fff;
+}
+#free p {
+  font-family: "Raleway-Regular";
+  color: rgba(255, 255, 255, 0.8);
+}
+#contact {
+	background: #fff;
+}
+#contact .form-group {
+	padding: 5% 0;
+}
+#contact .btn-default {
+	position: relative;
+  width: auto;
+  border-radius: 8px;
+  line-height: 1.7;
+  padding: 10px 28px;
+}
+.area {
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	justify-content: flex-end;;
+}
+#contact .area .form-group {
+	padding: 5% 0;
+	height: 100%;
+}
+#contact textarea {
+	height: 100%;
+	padding: 0;
+}
+.submit {
+	margin-top: 3vw;
+}
+#footer {
+	background: #000;
+	padding: 20px 0;
+}
+#footer p {
+	color: rgba(255, 255, 255, 0.502);
+	font-size: 1vw;
+	margin-top: 20px;
+}
+
+
+@media screen and (max-width: 1440px) {
+}
+@media screen and (max-width: 1024px) {
+	html, body {
+    font-size: 1.4vw;
+	}
+	h3 {
+    font-size: 2vw;
+	}
+	.navbar-nav a {
+    font-size: 1.5vw;
+	}
+	.form-content {
+		width: 65%;
+	}
+	.form-control {
+    font-size: 1.5vw;
+	}
+	.download,
+	.btn-default {
+    font-size: 1.5vw;
+	}
+	.tabs {
+    width: 90%;
+	}
+	.main-img {
+    max-width: 90%;
+	}
+	.options .footer p {
+		font-size: 1.5vw;
+	}
+}
+@media screen and (max-width: 768px) {
+	#about,
+	#pricing, #reviews,
+	#contact {
+    padding: 8vw 15px;
+	}
+	#brand-bar {
+		padding: 20px 15px;
+	}
+	#features article {
+    padding: 7vw 15px;
+	}
+	.feature1 .flex-parent {
+		display: block;
+	}
+	.tabs {
+    width: 100%;
+	}
+	.tab {
+		float: left;
+	}
+}
+@media screen and (max-width: 767px) {
+}
+@media screen and (max-width: 767px)
+and (min-width: 426px) {
+}
+@media screen and (max-width: 425px) {
 }
