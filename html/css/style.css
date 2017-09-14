@@ -148,9 +148,9 @@ section {
 	background: #ee8337;
 	border-radius: 8px;
 }
-
 .main-nav {
 	background: #000;
+	position: relative;
 }
 .navbar-brand {
 	color: #fff;
@@ -170,11 +170,36 @@ section {
 	color: #ee8337;
 	font-family: "Raleway-Regular";
 }
-.navbar-nav a{
+.navbar-toggle {
+	position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  padding: 9px 10px;
+  margin: 0;
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  border-radius: 0;
+}
+.navbar-toggle .icon-bar {
+  width: 30px;
+  margin: 6px 0;
+  border-radius: 0;
+  background: #fff;
+}
+.nav>li>a {
+  padding: 10px 0px;
+}
+.navbar-nav a {
 	color: #9a9a9a;
 	font-size: 1.2vw;
 	font-family: "OpenSans-SemiBold";
-	margin: 1vw 0 1vw 1vw;
+	margin: 1vw;
+	border-bottom: 1px solid transparent;
+}
+.navbar-nav a:hover {
+  border-bottom: 1px solid #9a9a9a;
 }
 .banner {
 	background: url(../img/banner.png) no-repeat 100% 0%;
@@ -526,9 +551,8 @@ section {
 }
 
 
-@media screen and (max-width: 1440px) {
-}
-@media screen and (max-width: 1024px) {
+
+@media screen and (max-width: 992px) {
 	html, body {
     font-size: 1.4vw;
 	}
@@ -548,8 +572,8 @@ section {
 	.btn-default {
     font-size: 1.5vw;
 	}
-	.tabs {
-    width: 90%;
+	.feature3 .main-img {
+    float: right;
 	}
 	.main-img {
     max-width: 90%;
@@ -558,11 +582,17 @@ section {
 		font-size: 1.5vw;
 	}
 }
-@media screen and (max-width: 768px) {
+/*@media screen and (max-width: 767px) {
+	html, body {
+    font-size: 2.3vw;
+	}
 	#about,
 	#pricing, #reviews,
-	#contact {
+	#contact, #free {
     padding: 8vw 15px;
+	}
+	.navbar-brand {
+    font-size: 3vw;
 	}
 	#brand-bar {
 		padding: 20px 15px;
@@ -573,17 +603,267 @@ section {
 	.feature1 .flex-parent {
 		display: block;
 	}
+	.feature1 .flex-child {
+		margin: 2vw 0;
+	}
+	.tabs {
+    display: block;
+	}
+	.tab {
+    height: 13vw;
+	}
+	#features .round {
+    width: 5vw;
+    height: 5vw;
+    margin: 0.3vw 1vw 0 0;
+	}
+	#about .capnion {
+		margin-bottom: 0;
+	}
+	#about .round {
+    width: 9vw;
+    height: 9vw;
+		margin-top: 2vw;
+		margin-bottom: 4vw;
+	}
+	#reviews .description {
+		margin-top: 0vw;
+    margin-bottom: 4vw;
+	}
+	#footer p {
+    font-size: 1.3vw;
+	}
+}*/
+@media screen and (max-width: 767px) {
+	html, body {
+    font-size: 2.3vw;
+	}
+	h1 {
+    font-size: 12vw;
+	}
+	h2 {
+		font-size: 4.5vw
+	}
+	h3 {
+    font-size: 3vw;
+	}
+	.flex-parent {
+		display: block;
+	}
+	.line {
+    width: 15vw;
+    margin: 5.5vw 0;
+	}
+	.download, .btn-default {
+    font-size: 2.5vw;
+		padding: 7px 25px;
+		margin: 6vw 0;
+	}
+	.caption {
+    margin-bottom: 15vw;
+	}
+	.navbar-brand {
+    font-size: 7vw;
+		padding: 15px 0;
+	}
+	.navbar-collapse {
+		float: none;
+		width: 100%;
+		text-align: center;
+	}
+	.navbar-nav a {
+    font-size: 2.5vw;
+	}
+	.navbar-nav a:hover {
+	  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	}
+	.banner {
+    padding: 8vw 10vw 16vw 10vw;
+	}
+	#brand-bar {
+		padding: 2vw 10vw;
+	}
+	section {
+		padding: 7vw 10vw;
+	}
+	#features article {
+		padding: 7vw 10vw;
+	}
+	.form-content {
+    width: 70%;
+		margin-top: 30px;
+	}
+	.form-group {
+    padding: 3% 0;
+	}
+	.form-content .btn-default {
+    margin: 0;
+	}
+	.form-control {
+    font-size: 2.2vw;
+	}
+	#brand-bar .fa-bar {
+    margin-top: 2vw;
+	}
+	.feature1 .flex-child {
+    margin: 5vw 0;
+	}
+	.tabs {
+    display: block;
+	}
+	.tab {
+		width: calc(33.33% - 1px);
+    height: 10vw;
+    float: left;
+    margin-right: 1px;
+	}
+	.main-img {
+    margin: 0 auto;
+    margin-bottom: 55px;
+		max-width: 100%;
+	}
+	#features .round {
+    width: 7vw;
+    height: 7vw;
+    margin: 0.3vw 4vw 0 0;
+	}
+	.feature1 .download {
+    margin-bottom: 0;
+	}
+	.info {
+    width: calc(100% - 11vw);
+	}
+	.arrows>li {
+		margin: 20px 0;
+	}
+	#about .round {
+		width: 12vw;
+    height: 12vw;
+    margin-top: 8vw;
+    margin-bottom: 4vw;
+	}
+	#about .caption {
+    margin-bottom: 0vw;
+	}
+	.options {
+		margin-bottom: 40px;
+		padding: 0 12vw;
+	}
+	.options:last-child {
+    margin-bottom: 20px;
+	}
+	.options .main p:first-child {
+    font-size: 16vw;
+	}
+	.options .main p:first-child span {
+    font-size: 8.3vw;
+	}
+	.options .description li {
+    line-height: 3.5;
+	}
+	.options .footer p {
+    font-size: 3vw;
+	}
+	.saying {
+    padding: 4vw;
+	}
+	.saying::after {
+    bottom: -5vw;
+    border-left: 3vw solid transparent;
+    border-right: 3vw solid transparent;
+    border-top: 6vw solid #f5f5f5;
+	}
+	.photo-round {
+    width: 20vw;
+    height: 20vw;
+		margin-right: 20px;
+	}
+	#reviews .description {
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		align-items: center;
+		margin-top: 6vw;
+	}
+	.padd {
+    padding: 5vw 15px;
+	}
+	#contact .btn-default {
+    margin: 0 auto;
+	}
+	#footer p {
+    font-size: 2vw;
+		margin-top: 15px;
+	}
+}
+
+@media screen and (max-width: 425px) {
+	html, body {
+    font-size: 4vw;
+	}
+	h1 {
+    font-size: 14vw;
+	}
+	h2 {
+    font-size: 6vw;
+	}
+	h3 {
+    font-size: 5vw;
+	}
+	.caption {
+    padding: 0 15px;
+	}
+	.download, .btn-default {
+    font-size: 4vw;
+	}
+	.navbar-nav a {
+    font-size: 4vw;
+	}
+	#brand-bar {
+		padding: 5vw 0;
+	}
+	section {
+		padding: 15vw 0;
+	}
+	#features article {
+		padding: 10vw 0;
+	}
+	#features .feature2,
+	#features .feature3 {
+		padding: 15vw 0;
+	}
+	.banner {
+    padding: 8vw 0 16vw 0;
+	}
+	.form-content {
+    width: 100%;
+	}
+	.form-control {
+    font-size: 3.6vw;
+	}
+	#brand-bar .fa-bar {
+    margin-top: 4vw;
+	}
 	.tabs {
     width: 100%;
 	}
 	.tab {
-		float: left;
+		height: 20vw;
 	}
-}
-@media screen and (max-width: 767px) {
-}
-@media screen and (max-width: 767px)
-and (min-width: 426px) {
-}
-@media screen and (max-width: 425px) {
+	.tab:last-child {
+    margin-right: 0;
+	}
+	#about .round {
+    width: 20vw;
+    height: 20vw;
+	}
+	.options {
+    padding: 15px;
+	}
+	.options:last-child {
+    margin-bottom: 0;
+	}
+	#footer p {
+    font-size: 3vw;
+	}
 }
