@@ -190,6 +190,7 @@ section {
 }
 .nav>li>a {
   padding: 10px 0px;
+	width: 100%;
 }
 .navbar-nav a {
 	color: #9a9a9a;
@@ -257,7 +258,7 @@ section {
 	border-bottom: 1px solid #ccc;
 }
 .form-control:focus {
-  border-color: #ff9b51;
+  border-color: #ee8337;
   outline: 0;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -265,7 +266,7 @@ section {
 .btn-default {
   color: #fff;
 	font-family: "OpenSans-SemiBold";
-  background-color: #ff9b51;
+  background-color: #ee8337;
   border: none;
   border-radius: 0 0 8px 8px;
   width: 100%;
@@ -337,22 +338,49 @@ section {
 	flex-direction: column;
 	justify-content: space-between;
 }
+.nav-tabs {
+	border: none;
+	height: 100%;
+}
+.nav-tabs>li {
+	float: none;
+	margin-bottom: 1px;
+}
+.nav-tabs>li:last-child {
+	margin-bottom: 0;
+}
 .tab {
 	height: 33%;
-	margin-bottom: 1px;
 	background: #333;
-	display: -webkit-flex;
-	display: -ms-flex;
-	display: flex;
-	justify-content: center;
-	-ms-align-items: center;
-	align-items: center;
+	position: relative;
 	text-transform: uppercase;
 	color: #fff;
 	font-weight: bold;
 }
-.tab:nth-child(1) {
-	background: #ff8b38;
+.tab.active {
+	background: #ee8337;
+}
+.nav-tabs>li>a {
+  margin-right: 0;
+  border: none;
+  border-radius: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+  color: #fff;
+  background-color: transparent;
+  border: 1px none;
+}
+.tab a {
+  color: #fff;
+}
+.tab a:hover,
+.tab a:focus,
+.tab a:active {
+	color: #ff9b51;
 }
 .feature1 h3 {
 	margin-bottom: 4vw;
@@ -453,10 +481,39 @@ section {
 .options .description {
 	background: #fff;
 }
-.options .description li {
-	border-bottom: 2px solid #f5f5f5;
+.panel-group {
+  margin-bottom: 0;
+}
+.panel-group .panel+.panel {
+	margin-top: 0;
+}
+.panel-group .panel {
+	border-radius: 0;
+}
+.panel {
+	border-radius: 0;
+}
+.panel-default {
+  border: none;
+}
+.panel-default>.panel-heading {
+  border-bottom: 2px solid #f5f5f5;
+  background: #fff;
+}
+.panel-default>.panel-heading+
+.panel-collapse>.panel-body {
+	background-color: #eae9e9;
+}
+.panel-heading {
+	padding: 0;
+}
+.panel-title a {
 	text-transform: uppercase;
 	line-height: 2.5;
+	color: #86878b;
+}
+.panel-body p {
+	font-family: "OpenSans-Italic";
 }
 #reviews {
 	background: #fff;
@@ -582,58 +639,7 @@ section {
 		font-size: 1.5vw;
 	}
 }
-/*@media screen and (max-width: 767px) {
-	html, body {
-    font-size: 2.3vw;
-	}
-	#about,
-	#pricing, #reviews,
-	#contact, #free {
-    padding: 8vw 15px;
-	}
-	.navbar-brand {
-    font-size: 3vw;
-	}
-	#brand-bar {
-		padding: 20px 15px;
-	}
-	#features article {
-    padding: 7vw 15px;
-	}
-	.feature1 .flex-parent {
-		display: block;
-	}
-	.feature1 .flex-child {
-		margin: 2vw 0;
-	}
-	.tabs {
-    display: block;
-	}
-	.tab {
-    height: 13vw;
-	}
-	#features .round {
-    width: 5vw;
-    height: 5vw;
-    margin: 0.3vw 1vw 0 0;
-	}
-	#about .capnion {
-		margin-bottom: 0;
-	}
-	#about .round {
-    width: 9vw;
-    height: 9vw;
-		margin-top: 2vw;
-		margin-bottom: 4vw;
-	}
-	#reviews .description {
-		margin-top: 0vw;
-    margin-bottom: 4vw;
-	}
-	#footer p {
-    font-size: 1.3vw;
-	}
-}*/
+
 @media screen and (max-width: 767px) {
 	html, body {
     font-size: 2.3vw;
@@ -710,12 +716,24 @@ section {
 	}
 	.tabs {
     display: block;
+		width: 100%;
 	}
 	.tab {
 		width: calc(33.33% - 1px);
-    height: 10vw;
-    float: left;
+    height: 12vw;
     margin-right: 1px;
+	}
+	.tab:last-child {
+    margin-right: 0;
+	}
+	.nav-tabs>li {
+    float: left;
+    margin-bottom: 0px;
+	}
+	.tabs .nav>li>a {
+    padding: 0;
+    width: 100%;
+    line-height: 12vw;
 	}
 	.main-img {
     margin: 0 auto;
@@ -763,6 +781,9 @@ section {
 	}
 	.options .footer p {
     font-size: 3vw;
+	}
+	.panel-body p {
+    font-size: 2.3vw;
 	}
 	.saying {
     padding: 4vw;
@@ -844,14 +865,11 @@ section {
 	#brand-bar .fa-bar {
     margin-top: 4vw;
 	}
-	.tabs {
-    width: 100%;
-	}
 	.tab {
-		height: 20vw;
+    height: 20vw;
 	}
-	.tab:last-child {
-    margin-right: 0;
+	.tabs .nav>li>a {
+    line-height: 20vw;
 	}
 	#about .round {
     width: 20vw;
@@ -862,6 +880,9 @@ section {
 	}
 	.options:last-child {
     margin-bottom: 0;
+	}
+	.panel-body p {
+    font-size: 4vw;
 	}
 	#footer p {
     font-size: 3vw;
