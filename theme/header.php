@@ -29,52 +29,18 @@
 
               <a class="navbar-brand" href="#">ax<span>it</span></a>
             </div>
-
-            <div class="collapse navbar-collapse top-menu pull-right" id="bs-example-navbar-collapse-1">
-              <ul class="nav navbar-nav">
-                <li><a class="active" href="#features">Features</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#reviews">Reviews</a></li>
-                <li><a href="#contact">Contact</a></li>
-              </ul>
-            </div>
+            <?php
+              wp_nav_menu( array(
+                'theme_location'  => 'primary',
+                'menu'            => 'primary',
+                'container'       => 'div',
+                'container_class' => 'collapse navbar-collapse top-menu pull-right',
+                'container_id'    => 'bs-example-navbar-collapse-1',
+                'menu_class'      => 'nav navbar-nav',
+                )
+              );
+            ?>
           </div>
         </div>
       </div>
     </div>
-    <div class="banner">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-sm-11 col-sm-offset-1">
-            <div class="row flex-parent">
-              <div class="col-sm-12 col-md-6 slogan">
-                <h1>ax<span>it</span></h1>
-                <h2>Modern axure template for beautiful prototypes</h2>
-                <div class="line"></div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-                <a href="#" class="download">Download</a>
-              </div>
-              <div class="col-sm-12 col-md-6 flex-child">
-                <div class="flex-content form-content">
-                  <h3>Try Your <span>FREE</span> Trial Today</h3>
-                  <form role="form">
-                    <div class="form-group">
-                      <input type="text" class="form-control" id="name" placeholder="Name">
-                    </div>
-                    <div class="form-group">
-                      <input type="email" class="form-control" id="email" placeholder="Email">
-                    </div>
-                    <div class="form-group">
-                      <input type="password" class="form-control" id="password" placeholder="Password">
-                    </div>
-                    <button type="submit" class="btn btn-default">Get Started</button>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>

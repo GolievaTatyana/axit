@@ -1,6 +1,7 @@
 <?php $templateUri = get_template_directory_uri();?>
 
 <?php get_header(); ?>
+
   <section id="brand-bar">
     <div class="container-fluid">
       <div class="row">
