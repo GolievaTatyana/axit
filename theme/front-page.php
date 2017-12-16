@@ -134,6 +134,65 @@ foreach ($pagesForSections as $page) {
   </section>
 <?php endif; ?>
 
+<?php if ($pricing): ?>
+  <section id="pricing">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12 col-md-10 col-md-offset-1">
+          <div class="row text-center caption">
+            <h2>Pricing options</h2>
+            <div class="line"></div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div>
+          <div class="row content flex-parent">
+            <?php foreach ($pricing as $key => $item): ?>
+              <?php $meta_value = get_post_meta( $item->ID, 'price', true ); ?>
+              <div class="col-sm-4 text-center options">
+                <div class="header">
+                  <h3><?php echo $item->post_title; ?></h3>
+                </div>
+                <div class="main">
+                  <p><span>$</span><?php echo $meta_value; ?></p>
+                  <p><?php echo $item->post_content; ?></p>
+                </div>
+                <div class="footer"><p><?php echo $item->post_excerpt; ?></p></div>
+                <ul class="description">
+                  <div class="panel-group" id="accordion">
+                    <?php
+                      $args = array(
+                        'post_parent' => $item->ID,
+                        'post_type' => 'page',
+                        'post_status' => 'publish',
+                      );
+                      $childrens = get_children( $args );
+                    ?>
+                    <?php foreach ($childrens as $child): ?>
+                      <?php $meta_id_atribute = get_post_meta( $child->ID, 'id_atribute', true ); ?>
+                      <?php $meta_accordion_number = get_post_meta( $child->ID, 'accordion_number', true ); ?>
+                      <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion<?php echo $meta_accordion_number; ?>" href="#collapse<?php echo $meta_id_atribute; ?>"><?php echo $child->post_title; ?></a>
+                          </h4>
+                        </div>
+                        <div id="collapse<?php echo $meta_id_atribute; ?>" class="panel-collapse collapse in">
+                          <div class="panel-body">
+                            <p><?php echo $child->post_content; ?></p>
+                          </div>
+                        </div>
+                      </div>
+                    <?php endforeach; ?>
+                  </div>
+                </ul>
+              </div>
+            <?php endforeach; ?>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<?php endif; ?>
+
 <?php if ($reviews): ?>
   <section id="reviews">
     <div class="container-fluid">
