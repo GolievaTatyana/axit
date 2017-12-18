@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="<?php echo $templateUri ?>/font-awesome/css/font-awesome.min.css">
   <link rel="shortcut icon" href="axit.ico" type="image/x-icon">
   <title>axit</title>
+  <?php wp_head();?>
 </head>
 <body>
   <header id="header">

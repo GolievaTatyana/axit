@@ -106,6 +106,116 @@ foreach ($pagesForSections as $page) {
   </div>
 </section>
 
+<section id="features">
+  <?php if ($features): ?>
+    <?php foreach ($features as $key => $item): ?>
+      <?php $meta_article_class = get_post_meta( $item->ID, 'article_class', true ); ?>
+      <?php $thumbnailUrl = get_the_post_thumbnail_url($item, full);?>
+      <article class="feature<?php echo $meta_article_class ?>">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-12 col-md-10 col-md-offset-1">
+              <div class="row flex-parent">
+                <?php if ($key == 0):?>
+                  <div class="col-sm-4 col-sm-push-8 flex-child">
+                    <div class="flex-content">
+                      <img src="<?php echo $thumbnailUrl; ?>" alt="" class="img-responsive">
+                    </div>
+                  </div>
+                  <div class="col-sm-2 col-sm-pull-4 flex-child">
+                    <div class="flex-content tabs">
+                      <ul class="nav nav-tabs">
+                        <li class="active tab"><a href="#tab-1" data-toggle="tab">tab 1</a></li>
+                        <li class="tab"><a href="#tab-2" data-toggle="tab" class="tab">tab 2</a></li>
+                        <li class="tab"><a href="#tab-3" data-toggle="tab" class="tab">tab 3</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-sm-pull-4 flex-child">
+                    <div class="flex-content">
+                      <div class="tab-content">
+                        <?php
+                        $args = array(
+                          'post_parent' => $item->ID,
+                          'post_type' => 'page',
+                          'post_status' => 'publish',
+                        );
+                        $children = get_children( $args );
+                        ?>
+                        <?php $counter = 0; ?>
+                        <?php foreach ( $children as $childKey => $child ): ?>
+                          <?php $meta_tab_id = get_post_meta( $child->ID, 'tab_id', true ); ?>
+                          <?php if ($counter == 0): ?>
+                          <div class="tab-pane active fade in" id="tab-<?php echo $meta_tab_id ?>">
+                          <?php else: ?>
+                          <div class="tab-pane fade" id="tab-<?php echo $meta_tab_id ?>">
+                          <?php endif; ?>
+                            <h3><?php echo $child->post_title; ?></h3>
+                            <?php echo apply_filters('the_content',$child->post_content); ?>
+                          </div>
+                          <?php $counter++; ?>
+                        <?php endforeach; ?>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <?php endif; ?>
+                <?php if ($key !== 0 && $key % 2): ?>
+                  <div class="col-sm-12 col-md-6 flex-child">
+                    <div class="flex-content">
+                      <img src="<?php echo $thumbnailUrl; ?>" alt="" class="img-responsive main-img">
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-6 flex-child">
+                    <div class="flex-content">
+                      <h3><?php echo $item->post_title; ?></h3>
+                      <div class="line"></div>
+                      <p><?php echo $item->post_content; ?></p>
+                      <?php
+                      $args = array(
+                        'post_parent' => $item->ID,
+                        'post_type' => 'page',
+                        'post_status' => 'publish',
+                      );
+                      $children = get_children( $args );
+                      ?>
+                      <ul class="arrows">
+                        <?php foreach ($children as $child): ?>
+                        <?php $meta_img_style = get_post_meta( $child->ID, 'img_style', true ); ?>
+                        <li>
+                          <div class="round" style="background-image: url(img/arrow-<?php echo $meta_img_style; ?>.png) "></div>
+                          <div class="info">
+                            <p><?php echo $item->post_title; ?></p>
+                            <p><?php echo $item->post_content; ?></p>
+                          </div>
+                        </li>
+                        <?php endforeach; ?>
+                      </ul>
+                    </div>
+                  </div>
+                  <?php elseif ($key !== 0 && $key % 3): ?>
+                  <div class="col-sm-6 col-sm-push-6 flex-child">
+                    <div class="flex-content">
+                      <img src="<?php echo $thumbnailUrl; ?>" alt="" class="img-responsive main-img">
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-sm-pull-6 flex-child">
+                    <div class="flex-content">
+                      <h3><?php echo $item->post_title; ?></h3>
+                      <div class="line"></div>
+                      <?php echo apply_filters('the_content', $item->post_content);  ?>
+                    </div>
+                  </div>
+                <?php endif; ?>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    <?php endforeach; ?>
+  <?php endif; ?>
+</section>
+
 <?php if ($about): ?>
   <section id="about">
     <div class="container-fluid">
@@ -159,14 +269,14 @@ foreach ($pagesForSections as $page) {
                 <ul class="description">
                   <div class="panel-group" id="accordion">
                     <?php
-                      $args = array(
-                        'post_parent' => $item->ID,
-                        'post_type' => 'page',
-                        'post_status' => 'publish',
-                      );
-                      $childrens = get_children( $args );
+                    $args = array(
+                      'post_parent' => $item->ID,
+                      'post_type' => 'page',
+                      'post_status' => 'publish',
+                    );
+                    $children = get_children( $args );
                     ?>
-                    <?php foreach ($childrens as $child): ?>
+                    <?php foreach ($children as $child): ?>
                       <?php $meta_id_atribute = get_post_meta( $child->ID, 'id_atribute', true ); ?>
                       <?php $meta_accordion_number = get_post_meta( $child->ID, 'accordion_number', true ); ?>
                       <div class="panel panel-default">
@@ -175,7 +285,7 @@ foreach ($pagesForSections as $page) {
                             <a data-toggle="collapse" data-parent="#accordion<?php echo $meta_accordion_number; ?>" href="#collapse<?php echo $meta_id_atribute; ?>"><?php echo $child->post_title; ?></a>
                           </h4>
                         </div>
-                        <div id="collapse<?php echo $meta_id_atribute; ?>" class="panel-collapse collapse in">
+                        <div id="collapse<?php echo $meta_id_atribute; ?>" class="panel-collapse collapse">
                           <div class="panel-body">
                             <p><?php echo $child->post_content; ?></p>
                           </div>
@@ -237,4 +347,42 @@ foreach ($pagesForSections as $page) {
   </div>
 </section>
 
-<?php get_header(); ?>
+<?php $contact_section = $contact[0];?>
+<section id="contact">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12 col-md-10 col-md-offset-1">
+        <div class="row text-center caption">
+          <h2><?php echo $contact_section->post_title; ?></h2>
+          <div class="line"></div>
+          <p><?php echo $contact_section->post_excerpt; ?></p>
+        </div>
+        <div class="row flex-parent">
+          <div class="col-sm-12 col-md-6">
+            <form role="form">
+              <div class="form-group">
+                <input type="text" class="form-control" id="name" placeholder="Name">
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" id="email" placeholder="Email">
+              </div>
+              <div class="form-group">
+                <input type="subgect" class="form-control" id="subgect" placeholder="Subgect">
+              </div>
+            </form>
+          </div>
+          <div class="col-sm-12 col-md-6 area">
+            <div class="form-group">
+              <textarea class="form-control" placeholder="Message"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="row submit">
+          <button type="submit" class="btn btn-default center-block">Send Message</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<?php get_footer(); ?>
