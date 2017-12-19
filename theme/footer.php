@@ -22,7 +22,6 @@
 <script src="<?php echo $templateUri ?>/js/classie.js"></script>
 <script src="<?php echo $templateUri ?>/js/bootstrap.min.js"></script>
 <script src="<?php echo $templateUri ?>/js/jquery.mCustomScrollbar.js"></script>
-<script src="<?php echo $templateUri ?>/js/npm.js"></script>
 <script src="<?php echo $templateUri ?>/js/smoothscroll.js"></script>
 <script src="<?php echo $templateUri ?>/js/main.js"></script>
 <?php wp_footer(); ?>

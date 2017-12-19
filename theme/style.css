@@ -232,6 +232,9 @@ section {
 	border-radius: 8px;
 	position: relative;
 }
+.form-content .form-group:nth-child(4) {
+	margin-bottom: 14%;
+}
 .form-content h3 {
 	line-height: 3;
 	text-align: center;
@@ -282,11 +285,16 @@ section {
 	left: 0;
 	bottom: 0;
 }
-.btn-default.active, .btn-default.focus, .btn-default:active, .btn-default:focus, .btn-default:hover, .open>.dropdown-toggle.btn-default {
+.btn-default.active, .btn-default.focus, .btn-default:active, .btn-default:focus, .btn-default:hover, .open>.dropdown-toggle.btn-default, .download.orange:hover {
   color: #fff;
   background-color: #e7ac81;
   border: none;
 	outline: none;
+}
+
+.banner .download:hover, #free .download:hover {
+	color: rgba(255, 255, 255, 0.9);
+	border: 2px solid rgba(255, 255, 255,0.9);
 }
 
 #brand-bar {
@@ -408,13 +416,21 @@ section {
 .arrows li {
 	overflow: hidden;
 }
+
+.arrows li:nth-child(1) .round {
+	background: url(img/arrow-t.png)
+	no-repeat center center;
+}
+.arrows li:nth-child(2) .round {
+	background: url(img/arrow-b.png)
+	no-repeat center center;
+}
+
 #features .round {
 	width: 3vw;
 	height: 3vw;
 	margin: 0.3vw 3vw 0 0;
 	float: left;
-	background: no-repeat center;
-	background-size: 60%;
 }
 .info {
 	float: right;
@@ -718,11 +734,17 @@ section {
 	.form-control {
     font-size: 2.2vw;
 	}
+	.form-content .form-group:nth-child(4) {
+    margin-bottom: 5vw;
+	}
 	#brand-bar .fa-bar {
     margin-top: 2vw;
 	}
 	.feature1 .flex-child {
     margin: 5vw 0;
+	}
+	.nav-tabs {
+    margin-bottom: 10vw;
 	}
 	.tabs {
     display: block;

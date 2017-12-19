@@ -183,7 +183,7 @@ foreach ($pagesForSections as $page) {
                         <?php foreach ($children as $child): ?>
                         <?php $meta_img_style = get_post_meta( $child->ID, 'img_style', true ); ?>
                         <li>
-                          <div class="round" style="background-image: url(img/arrow-<?php echo $meta_img_style; ?>.png) "></div>
+                          <div class="round"></div>
                           <div class="info">
                             <p><?php echo $item->post_title; ?></p>
                             <p><?php echo $item->post_content; ?></p>
